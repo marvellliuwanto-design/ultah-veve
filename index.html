@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Happy Birthday</title>
+
+    <style>
+        
+        body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: #FFF44F;
+}
+      .yes {
+    position: relative;
+    background-color: #ff9ec4;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.yes::before,
+.yes::after {
+    content: "✦";
+    position: absolute;
+    color: blue;
+    font-size: 14px;
+    animation: sparkle 1s infinite;
+}
+
+.yes::before {
+    top: 2px;
+    left: 7px;
+}
+
+.yes::after {
+    bottom: 2px;
+    right: 7px;
+    animation-delay: 0.5s;
+}
+
+@keyframes sparkle {
+    0%, 100% {
+        opacity: 0;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+}
+
+       .box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 600px;
+    padding: 50px;
+    text-align: center;
+
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        button {
+            padding: 12px 25px;
+            margin: 10px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .yes {
+            background-color: #FFB6C1;
+            color: white;
+        }
+
+        .no {
+            background-color: #ddd;
+        }
+
+        #message {
+            margin-top: 15px;
+            font-size: 18px;
+        }
+        
+    .bucket {
+    width: 150px;
+    display: block;
+    margin: 15px auto;
+    animation: goyang 1.5s ease-in-out infinite;
+}
+
+@keyframes goyang {
+    0%, 100% {
+        transform: rotate(-5deg);
+    }
+
+    50% {
+        transform: rotate(5deg);
+    }
+}
+    </style>
+</head>
+
+<body>
+
+   <div class="box">
+
+    <h1>🎂 HAPPY BIRTHDAY VEVE!!! 🎉</h1>
+
+    <img src="bunga.png" class="bucket">
+
+    <p>Do you want a bucket?💐</p>
+
+    <button class="yes" onclick="yesButton()">Yes</button>
+    <button class="no" onclick="noButton()">No</button>
+
+    <p id="message"></p>
+
+</div>
+
+    <script>
+        let count = 0;
+
+        const messages = [
+            "Really? 🥺",
+            "You sure?🥲",
+            "I'm sad 😭",
+            "Please? 🥺",
+            "Are you really sure?🙁",
+            "Think again 😭",
+            "accept please😭😭"
+        ];
+
+        function yesButton() {
+            window.location.href = "halaman_2.html";
+        }
+
+        function noButton() {
+            document.getElementById("message").innerText = messages[count];
+
+            count++;
+
+            if (count >= messages.length) {
+                count = 0;
+            }
+        }
+    </script>
+
+</body>
+</html>
